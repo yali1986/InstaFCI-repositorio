@@ -1,0 +1,36 @@
+#barrasuperior {
+    display: flex;     
+    align-items: center;
+    position: relative;
+}
+
+.dropdown {
+    width: 20px;
+    height:5px; 
+    justify-content: left; 
+}
+.flecha {
+    width: 35px;
+    height:20px; 
+    margin-right: 25px;
+    justify-content: left; 
+}
+
+
+
+.right-items {    
+    margin-left: auto;
+}
+
+.videollamada {
+    width: 50px;
+    height: 40px;
+    margin-right: 15px;    
+}
+.escribir {
+    width: 45px;
+    height: 40px;
+    margin-left: 15px;
+    margin-right: 15px;     
+}
+
