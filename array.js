@@ -56,7 +56,11 @@ let historias = []
             .then((res) => {
              for (let i = 0; i < res.length; i++) {
                   // response.map(historia => 
-                  historias.push({ profile_name: res[i].profile_name })
+                  historias.push(                     
+                     {profile_name: res[i].profile_name,
+                     profile_image: res[i].profile_image,
+                     is_up_to_date: res[i].is_up_to_date}                    
+                  )
                }  
 
                for (let i = 0; i < historias.length; i++) {

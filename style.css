@@ -1,3 +1,6 @@
+body {
+    box-sizing: border-box;
+}
 p {
     margin-top: 0.2px;
     text-align: center;
@@ -39,8 +42,13 @@ p {
     margin-right: 0px;     
 }
 
+.caja-buscador {
+    position: relative;
+}
+
 #buscador {
     background-color: rgb(230, 228, 228);
+    width: 98%;   
     height: 35px;
     border-radius: 4px;
     border: none;  
@@ -67,14 +75,19 @@ h4.sol {
 }
 
 .seccion-chat-horizontal {
-    display: flex;
-    flex-wrap: wrap;  /*lo que quiero es que no se muestren cuando acabe la pantalla*/
+    display: flex;    
+    overflow-x: auto;   /*ocultar la barra de scroll*/
 }
 
 .chat {
     display: flex; 
-    justify-content: space-between;  
+    justify-content: space-between;     
 }
+
+.camara {
+    margin-right: 20px;
+}
+    
 
 .nombre-foto-vertical {
     display: flex;
@@ -82,4 +95,10 @@ h4.sol {
     align-items: center;   
 }
 
-/*falta aro si hay nuevas historias y punto verde si están conectados*/
+/*falta aro si hay nuevas historias en chat horizontal 
+punto verde si están conectados en ambos listados de chat
+lupa en input i corregir input
+barra gris del final
+barra transparente de arriba que deja ver la hora del móvil batería etc.
+encima de foto perfil de usuario, la nota
+*/
