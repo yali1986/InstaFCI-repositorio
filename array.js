@@ -1,42 +1,11 @@
 
 
-// //Listado horizontal de chats
-// const listadosChat = [
-//     {
-//     id: "1",
-//     fotoPerfil: "./img/foto1.jpg",
-//     userName: "xxx",
-//     enLínea: false, // sin punto verde 
-// },
-//  {
-//     id: "2",
-//     fotoPerfil: "./img/foto2.jpg",
-//     userName: "xxy",
-//     enLínea: true // punto verde 
-//  },
-//  {
-//     id: "3",
-//     fotoPerfil: "./img/foto3.jpg",
-//     userName: "xyy",
-//     enLínea: true // punto verde 
-//  },
-//  {
-//     id: "4",
-//     fotoPerfil: "./img/foto4.jpg",
-//     userName: "yyy",
-//     enLínea: false // sin punto verde 
-//  }
 
-// ]
+// let seccionHistoria = document.getElementById("seccionHistoria")
+let seccionChatVertical = document.getElementById("seccion-chat-vertical")
 
 
-
-
-//Listado vertical de chats
-//isUpToDate: true // aro rosa indicador de historia sin visualizar
-// cantidad de mensajes nuevos
-
-let seccionHistoria = document.getElementById("seccionHistoria")
+const baseUrl = "https://gkfibffviwvmphzqvuqe.supabase.co/storage/v1/object/public/fci-personal"
 let historias = []
 
  function getStories() {
@@ -54,6 +23,7 @@ let historias = []
  .then( (response) => {
         response.json()
             .then((res) => {
+               console.log(res)
              for (let i = 0; i < res.length; i++) {
                   // response.map(historia => 
                   historias.push(                     
@@ -62,9 +32,20 @@ let historias = []
                      is_up_to_date: res[i].is_up_to_date}                    
                   )
                }  
-
+               console.log(historias)
                for (let i = 0; i < historias.length; i++) {
-                  seccionHistoria.innerHTML += `<div>${historias[i].profile_name}</div>`
+                  seccionChatVertical.innerHTML += `        
+          
+
+
+                  <div class="chat">
+                  <div class="nombre-foto-vertical"> 
+                  <img src="${baseUrl + historias[i].profile_image}" alt="profile_photo3" class="profile" style="${historias[i].is_up_to_date ? "border: 2px solid red": "border:none"}"/>
+                  <p>${historias[i].profile_name}</p>
+              </div>              
+              <div>
+              <img src="./img/camara.jpg" alt="icono de cámara fotográfica" class="camara">
+          </div>`
                }      
 
             })
