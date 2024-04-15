@@ -78,7 +78,7 @@ h4.sol {
 
 .seccion-chat-horizontal {
     display: flex;    
-    overflow-x: auto;   /*ocultar la barra de scroll*/
+    /*overflow-x: auto;   la barra de scroll*/
 }
 
 .chat {
@@ -88,6 +88,7 @@ h4.sol {
 
 .camara {
     margin-right: 20px;
+    margin-top: 20px;    
 }
     
 

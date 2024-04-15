@@ -21,7 +21,7 @@ let historiash = []
             .then((res) => {
                console.log(res)
              for (let i = 0; i < res.length; i++) {
-                  // response.map(historia => 
+                  
                   historias.push(                     
                      {profile_name: res[i].profile_name,
                      profile_image: res[i].profile_image,
