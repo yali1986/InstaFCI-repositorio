@@ -38,7 +38,7 @@ let historiash = []
                   seccionChatVertical.innerHTML += ` 
                   <div class="chat">
                   <div class="nombre-foto-vertical"> 
-                  <img src="${baseUrl + historias[i].profile_image}" alt="profile_photo_usuario" class="profile" style="${historias[i].is_up_to_date ? "border: 2px solid red": "border:none"}"/>
+                  <img src="${baseUrl + historias[i].profile_image}" alt="profile_photo_usuario" class="profile-vertical" style="${historias[i].is_up_to_date ? "border: 2px solid red": "border:none"}"/>
                   <p>${historias[i].profile_name}</p>
               </div>              
               <div>

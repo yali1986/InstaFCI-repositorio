@@ -47,13 +47,14 @@ p {
 }
 
 #buscador {
-    background-color: rgb(230, 228, 228);
-    width: 98%;   
+    background-color: #D8E0E7; 
+     /* rgb(230, 228, 228); */
+    width: 97%;   
     height: 35px;
     border-radius: 4px;
     border: none;  
-    margin-left: 5px; 
-    margin-right: 5px;    
+    margin-left: 8px; 
+    margin-right: 8px;    
 }
 
 h4.sol {
@@ -72,6 +73,14 @@ h4.sol {
     height: 60px;
     width: 60px;
     border-radius: 40px;
+    margin: 15px;
+    margin-bottom: 0.2px;  
+}
+.profile-vertical {
+    object-fit: cover; /*que la imagen se contenga en el margen*/
+    height: 46px;
+    width: 46px;
+    border-radius: 23px;
     margin: 15px;
     margin-bottom: 0.2px;  
 }
@@ -98,10 +107,6 @@ h4.sol {
     align-items: center;   
 }
 
-/*falta aro si hay nuevas historias en chat horizontal 
-punto verde si están conectados en ambos listados de chat
-lupa en input i corregir input
-barra gris del final
-barra transparente de arriba que deja ver la hora del móvil batería etc.
-encima de foto perfil de usuario, la nota
-*/
+
+
+
