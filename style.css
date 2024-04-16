@@ -25,7 +25,6 @@ p {
 }
 
 
-
 .right-items {    
     margin-left: auto;    
 }
@@ -58,7 +57,7 @@ p {
 }
 
 h4.sol {
-    color: rgb(17, 131, 225);
+    color: #1183E1;
 }
 
 .mensol {
@@ -68,7 +67,7 @@ h4.sol {
     margin-top: 0px;    
 }
 
-.profile {
+.profile {   
     object-fit: cover; /*que la imagen se contenga en el margen*/
     height: 60px;
     width: 60px;
@@ -76,13 +75,27 @@ h4.sol {
     margin: 15px;
     margin-bottom: 0.2px;  
 }
+
+.puntoenlinea {    
+    position: absolute; 
+    height: 10px;
+    width: 10px; 
+    border-radius: 7px;
+    background-color: green;
+    border: solid 1.5px white;
+    left:42px; 
+    top: 60px; 
+    margin-left: 18px;
+}
+
+
 .profile-vertical {
     object-fit: cover; /*que la imagen se contenga en el margen*/
     height: 46px;
     width: 46px;
     border-radius: 23px;
     margin: 15px;
-    margin-bottom: 0.2px;  
+    margin-bottom: 0.2px;    
 }
 
 .seccion-chat-horizontal {

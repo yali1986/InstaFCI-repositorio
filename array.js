@@ -2,10 +2,10 @@ let seccionChatVertical = document.getElementById("seccion-chat-vertical")
 let seccionChatHorizontal = document.getElementById("seccion-chat-horizontal")
 
 const baseUrl = "https://gkfibffviwvmphzqvuqe.supabase.co/storage/v1/object/public/fci-personal"
-let historias = []
-let historiash = []
+let chats_vertical = []
+let chats_horizontal = []
 
- function getStories() {
+ 
     fetch("https://gkfibffviwvmphzqvuqe.supabase.co/rest/v1/stories?select=*", {
       method: "GET",
       mode: "cors",
@@ -19,27 +19,27 @@ let historiash = []
  .then( (response) => {
         response.json()
             .then((res) => {
-               console.log(res)
+               
              for (let i = 0; i < res.length; i++) {
                   
-                  historias.push(                     
+                  chats_vertical.push(                     
                      {profile_name: res[i].profile_name,
                      profile_image: res[i].profile_image,
                      is_up_to_date: res[i].is_up_to_date}                    
                   )
-                  historiash.push(                     
+                  chats_horizontal.push(                     
                      {profile_name: res[i].profile_name,
                      profile_image: res[i].profile_image,
                      live: res[i].live}                    
                   )
                }  
-               console.log(historias)
-               for (let i = 0; i < historias.length; i++) {
+               
+               for (let i = 0; i < chats_vertical.length; i++) {
                   seccionChatVertical.innerHTML += ` 
                   <div class="chat">
                   <div class="nombre-foto-vertical"> 
-                  <img src="${baseUrl + historias[i].profile_image}" alt="profile_photo_usuario" class="profile-vertical" style="${historias[i].is_up_to_date ? "border: 2px solid red": "border:none"}"/>
-                  <p>${historias[i].profile_name}</p>
+                  <img src="${baseUrl + chats_vertical[i].profile_image}" alt="profile_photo_usuario" class="profile-vertical" style="${chats_vertical[i].is_up_to_date ? "border: 2px solid #1183E1": "border:none"}"/>
+                  <p>${chats_vertical[i].profile_name}</p>
               </div>              
               <div>
               <img src="./img/camara.jpg" alt="icono de cámara fotográfica" class="camara">
@@ -47,21 +47,20 @@ let historiash = []
           </div>
           ` }   
                
-            for (let i = 0; i < historiash.length; i++) {
+            for (let i = 0; i < chats_horizontal.length; i++) {
                   seccionChatHorizontal.innerHTML += `        
-                  <div class="seccion-chat-horizontal">                  
-                  <div>    
-        <img src="${baseUrl + historiash[i].profile_image}" alt="profile_photo_usuario" class="profile" style="${historiash[i].live ? "border: 2px solid green": "border:none"}"/>  
-      
-        <p>${historiash[i].profile_name}</p>
+                                  
+                  <div style="position: relative">    
+        <img src="${baseUrl + chats_horizontal[i].profile_image}" alt="profile_photo_usuario" class="profile"/>  
+        <div class="puntoenlinea" style="${chats_horizontal[i].live ? "display: block": "display:none"}">
+        </div>
+        <p>${chats_horizontal[i].profile_name}</p>
     </div>
     </div>               
           ` } 
 
             })
-            .catch(() => { })
+            .catch((error) => { alert(error)})
       })
-      .catch(() => { })  
-}
+      .catch((error) => { alert(error) })  
 
-getStories()
