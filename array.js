@@ -30,7 +30,7 @@ let historiash = []
                   historiash.push(                     
                      {profile_name: res[i].profile_name,
                      profile_image: res[i].profile_image,
-                     }                    
+                     live: res[i].live}                    
                   )
                }  
                console.log(historias)
@@ -51,7 +51,8 @@ let historiash = []
                   seccionChatHorizontal.innerHTML += `        
                   <div class="seccion-chat-horizontal">                  
                   <div>    
-        <img src="${baseUrl + historiash[i].profile_image}" alt="profile_photo_usuario" class="profile"/>
+        <img src="${baseUrl + historiash[i].profile_image}" alt="profile_photo_usuario" class="profile" style="${historiash[i].live ? "border: 2px solid green": "border:none"}"/>  
+      
         <p>${historiash[i].profile_name}</p>
     </div>
     </div>               
